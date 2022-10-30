@@ -5,7 +5,7 @@
 
 #«qwe» «qwertyqwe» -> 2 
 
-import symbol
+
 
 
 string_1 = input()
