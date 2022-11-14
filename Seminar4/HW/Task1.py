@@ -13,10 +13,9 @@ for i in range(2, int(math.sqrt(number)) + 1): # находим квадратн
         list.append(i)
         #print(i)
         number //= i # целочисленное деление, убираем множитель из числа
-
-
-
 if (number != 1): # но один делитель может быть больше корня
     print (number)
 
 print(list)
+
+
