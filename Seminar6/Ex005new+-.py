@@ -1,0 +1,2 @@
+def someMagic(fileName):
+    

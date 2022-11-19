@@ -28,3 +28,24 @@ def get_up(nums):
     return ups
 
 print(get_up(nums))
+
+#ДЗ________________________________________
+
+import random
+
+size = 15
+
+numbers = [random.randint(1,100) for i in range(size)]
+print(numbers) #рандомный список
+index = random.randint(0, size -1)
+result = [numbers[index]]
+
+while index < size:   # рандомный перебор списка, от первого рандомного элемента к следующему рандомному элементу, рандомно!
+    index = random.randint(index+1, size)
+    if index < size:
+        if numbers[index] > result[-1]:
+            result.append(numbers[index])
+
+
+print(result) # рандомный элемент списка
+

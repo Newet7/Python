@@ -5,38 +5,53 @@
 # Список уникальных элементов
 # [1, 4, 2, 3, 6, 7]
 
-
-
 from random import randint
 
-def create_list(size, m, n):
-    return [randint(m, n) for i in range(size)]
 
-def get_unic_value(list):
-    return [i for i in set(list)]
+def zadachaHW():
+    def create_list(size, m, n):
+        return [randint(m, n) for i in range(size)]
+
+    def get_unic_value(list):
+        return [i for i in set(list)]
+
+    size = 10
+    m = 1
+    n = 10
+
+    # list_numbers = [1, 2, 2, 5, 5, 7, 4, 2, 1]
+    # print(list_numbers.count(2))
+
+    origin = create_list(size, m, n)
+    element_count = len([item for item in origin if item != 0])
+
+    counter = {}
+    
+    for elem in origin:
+        counter[elem] = counter.get(elem, 0) + 1
+    
+    doubles = [count for element, count in counter.items() if count > 1]
+    print(sum(doubles))
+
+    #print(max(set(origin ), key=lambda x: origin.count(x)))
+    print(origin)
+    print(get_unic_value(origin))
+
+#zadachaHW()
+
+# ДЗ_______________________________
+import random
 
 size = 10
-m = 1
-n = 10
 
-# list_numbers = [1, 2, 2, 5, 5, 7, 4, 2, 1]
-# print(list_numbers.count(2))
+numbers = [random.randint(1,10) for i in range(size)]
+numbers.sort()
+print(numbers)
 
+uniqNumbers = set(numbers)
+print(f'кол-во уникальных элементов {uniqNumbers}')
 
-
-origin = create_list(size, m, n)
-element_count = len([item for item in origin if item != 0])
-
-counter = {}
- 
-for elem in origin:
-    counter[elem] = counter.get(elem, 0) + 1
- 
-doubles = [count for element, count in counter.items() if count > 1]
-print(sum(doubles))
-
-#print(max(set(origin ), key=lambda x: origin.count(x)))
-print(origin)
-print(get_unic_value(origin))
-
+#counts = [numbers.count(i) for i in numbers] # сколько раз попадает тот или иной элемент из numbers
+counts = list(filter(lambda x : x>1, [numbers.count(i) for i in uniqNumbers]))
+print(f'кол-во повторяющихся элементов {sum(counts)}')
 

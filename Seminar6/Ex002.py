@@ -25,8 +25,7 @@ def zadacha1():
     # print(set(str(num1)))
     # print(set(str(num2)))
 
-    if CheckNum(num1) and CheckNum(num2):
-        # делаем список из кортежей
+    if CheckNum(num1) and CheckNum(num2): # делаем список из кортежей
         num1 = CountAllnum(num1)
         num2 = CountAllnum(num2)
 
