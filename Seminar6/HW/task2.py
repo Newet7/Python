@@ -27,6 +27,13 @@ for i in range(len(size)):
                 print('yes')
             else:
                 print('no')
+#или
+
+allNumbers = ''
+for i in size:
+    allNumbers = allNumbers + str(i)
+
+print('да' if allNumbers.count(str(N))> 0 else 'нет')
 
 
 
